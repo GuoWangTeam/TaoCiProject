@@ -12,4 +12,15 @@
 #import "UIView+Extension.h"
 #import "UIImage+iOS6and7.h"
 
+
+#define SCREEN_WIDTH  [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT  [[UIScreen mainScreen] bounds].size.height
+
+// 颜色
+#define TCColor(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+#define TCLog(...) NSLog(@"%s %d \n %@\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+
+#define TCMainBGColor TCColor(40, 163 ,200, 1)
+
 #endif
