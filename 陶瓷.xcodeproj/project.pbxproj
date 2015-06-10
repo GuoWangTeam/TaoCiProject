@@ -210,7 +210,6 @@
 		021B3E861B1F2B51008B586A = {
 			isa = PBXGroup;
 			children = (
-				02BCE27E1B229A9900EF3E72 /* libsqlite3.dylib */,
 				021B3E911B1F2B51008B586A /* 陶瓷 */,
 				021B3EAB1B1F2B51008B586A /* 陶瓷Tests */,
 				021B3E901B1F2B51008B586A /* Products */,
@@ -332,6 +331,7 @@
 		021B3ED51B1F3158008B586A /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				02BCE27E1B229A9900EF3E72 /* libsqlite3.dylib */,
 				02BCE27B1B22998700EF3E72 /* MBProgressHUD.h */,
 				02BCE27C1B22998700EF3E72 /* MBProgressHUD.m */,
 				02BCE26A1B2298F200EF3E72 /* fmdb */,
