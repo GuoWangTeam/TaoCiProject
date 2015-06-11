@@ -24,6 +24,7 @@
     selectedBackgroundView.backgroundColor = [UIColor whiteColor];
     cell.selectedBackgroundView = selectedBackgroundView;
     cell.backgroundColor = TCMainBGColor;
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
     
     return cell;
 }

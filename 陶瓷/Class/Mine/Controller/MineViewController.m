@@ -2,7 +2,7 @@
 //  MineViewController.m
 //  陶瓷
 //
-//  Created by 王戈 on 15/6/3.
+//  Created by 王戈 on 15/6/10.
 //  Copyright (c) 2015年 王戈. All rights reserved.
 //
 
@@ -16,8 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor greenColor];
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
