@@ -18,6 +18,10 @@
 		021B3EFD1B1F374B008B586A /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021B3EFC1B1F374B008B586A /* DiscoverViewController.m */; };
 		021B3F031B1F3765008B586A /* TailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021B3F021B1F3765008B586A /* TailViewController.m */; };
 		021B3F091B1F392D008B586A /* UIImage+iOS6and7.m in Sources */ = {isa = PBXBuildFile; fileRef = 021B3F081B1F392D008B586A /* UIImage+iOS6and7.m */; };
+		025E4ED01B29C1810012AFAB /* MineTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 025E4ECF1B29C1810012AFAB /* MineTableView.m */; };
+		025E4ED21B29C1980012AFAB /* MineTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 025E4ED11B29C1980012AFAB /* MineTableView.xib */; };
+		028062651B29A49A00F68157 /* TCLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 028062641B29A49A00F68157 /* TCLoginView.m */; };
+		0280626B1B29A4CD00F68157 /* TCLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0280626A1B29A4CD00F68157 /* TCLoginView.xib */; };
 		029FDA5F1B25202C001675C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 029FDA5E1B25202C001675C3 /* AppDelegate.m */; };
 		029FDA701B2522B5001675C3 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 029FDA631B2522B5001675C3 /* CategoryViewController.m */; };
 		029FDA741B2522B5001675C3 /* CategoryLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 029FDA6C1B2522B5001675C3 /* CategoryLeftCell.m */; };
@@ -58,7 +62,6 @@
 		02BCE27D1B22998700EF3E72 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BCE27C1B22998700EF3E72 /* MBProgressHUD.m */; };
 		02BCE27F1B229A9900EF3E72 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BCE27E1B229A9900EF3E72 /* libsqlite3.dylib */; };
 		02BEECDA1B282C090032915E /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BEECD81B282C090032915E /* MineViewController.m */; };
-		02BEECDB1B282C090032915E /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02BEECD91B282C090032915E /* MineViewController.xib */; };
 		02E8D6DA1B25BD6F00B2A2EB /* ad.png in Resources */ = {isa = PBXBuildFile; fileRef = 02E8D6D91B25BD6F00B2A2EB /* ad.png */; };
 		02E8D7191B27124700B2A2EB /* CategoryBottomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E8D7181B27124700B2A2EB /* CategoryBottomCell.m */; };
 		02E8D71C1B2717DB00B2A2EB /* CategoryBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E8D71B1B2717DB00B2A2EB /* CategoryBtn.m */; };
@@ -100,6 +103,12 @@
 		021B3F021B1F3765008B586A /* TailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TailViewController.m; sourceTree = "<group>"; };
 		021B3F071B1F392D008B586A /* UIImage+iOS6and7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+iOS6and7.h"; sourceTree = "<group>"; };
 		021B3F081B1F392D008B586A /* UIImage+iOS6and7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+iOS6and7.m"; sourceTree = "<group>"; };
+		025E4ECE1B29C1810012AFAB /* MineTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableView.h; sourceTree = "<group>"; };
+		025E4ECF1B29C1810012AFAB /* MineTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableView.m; sourceTree = "<group>"; };
+		025E4ED11B29C1980012AFAB /* MineTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineTableView.xib; sourceTree = "<group>"; };
+		028062631B29A49A00F68157 /* TCLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCLoginView.h; sourceTree = "<group>"; };
+		028062641B29A49A00F68157 /* TCLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCLoginView.m; sourceTree = "<group>"; };
+		0280626A1B29A4CD00F68157 /* TCLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TCLoginView.xib; sourceTree = "<group>"; };
 		029FDA5D1B25202C001675C3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		029FDA5E1B25202C001675C3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		029FDA621B2522B5001675C3 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
@@ -179,7 +188,6 @@
 		02BCE27E1B229A9900EF3E72 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		02BEECD71B282C090032915E /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		02BEECD81B282C090032915E /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
-		02BEECD91B282C090032915E /* MineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
 		02E8D6D91B25BD6F00B2A2EB /* ad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad.png; sourceTree = "<group>"; };
 		02E8D7171B27124700B2A2EB /* CategoryBottomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryBottomCell.h; sourceTree = "<group>"; };
 		02E8D7181B27124700B2A2EB /* CategoryBottomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryBottomCell.m; sourceTree = "<group>"; };
@@ -212,7 +220,6 @@
 		021B3E861B1F2B51008B586A = {
 			isa = PBXGroup;
 			children = (
-				02BCE27E1B229A9900EF3E72 /* libsqlite3.dylib */,
 				021B3E911B1F2B51008B586A /* 陶瓷 */,
 				021B3EAB1B1F2B51008B586A /* 陶瓷Tests */,
 				021B3E901B1F2B51008B586A /* Products */,
@@ -334,6 +341,7 @@
 		021B3ED51B1F3158008B586A /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				02BCE27E1B229A9900EF3E72 /* libsqlite3.dylib */,
 				02BCE27B1B22998700EF3E72 /* MBProgressHUD.h */,
 				02BCE27C1B22998700EF3E72 /* MBProgressHUD.m */,
 				02BCE26A1B2298F200EF3E72 /* fmdb */,
@@ -611,7 +619,6 @@
 			children = (
 				02BEECD71B282C090032915E /* MineViewController.h */,
 				02BEECD81B282C090032915E /* MineViewController.m */,
-				02BEECD91B282C090032915E /* MineViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -626,6 +633,12 @@
 		02BEECD61B2829500032915E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				028062631B29A49A00F68157 /* TCLoginView.h */,
+				028062641B29A49A00F68157 /* TCLoginView.m */,
+				0280626A1B29A4CD00F68157 /* TCLoginView.xib */,
+				025E4ECE1B29C1810012AFAB /* MineTableView.h */,
+				025E4ECF1B29C1810012AFAB /* MineTableView.m */,
+				025E4ED11B29C1980012AFAB /* MineTableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -713,11 +726,12 @@
 				029FDA7B1B252312001675C3 /* big.png in Resources */,
 				029FDA7C1B252312001675C3 /* cate.png in Resources */,
 				021B3EA31B1F2B51008B586A /* LaunchScreen.xib in Resources */,
+				0280626B1B29A4CD00F68157 /* TCLoginView.xib in Resources */,
 				029FDA761B2522B5001675C3 /* CategoryTableViewCell.xib in Resources */,
 				021B3EA01B1F2B51008B586A /* Images.xcassets in Resources */,
 				02E8D6DA1B25BD6F00B2A2EB /* ad.png in Resources */,
+				025E4ED21B29C1980012AFAB /* MineTableView.xib in Resources */,
 				08EF2BE81B22C96200F7768E /* HomeViewController.xib in Resources */,
-				02BEECDB1B282C090032915E /* MineViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +760,7 @@
 				021B3EC41B1F2EFE008B586A /* STTabbar.m in Sources */,
 				02BCE2771B2298F200EF3E72 /* FMDatabaseAdditions.m in Sources */,
 				02E8D71C1B2717DB00B2A2EB /* CategoryBtn.m in Sources */,
+				025E4ED01B29C1810012AFAB /* MineTableView.m in Sources */,
 				02BEECDA1B282C090032915E /* MineViewController.m in Sources */,
 				021B3EC01B1F2EC8008B586A /* STTableBarController.m in Sources */,
 				02BCE25D1B2298DA00EF3E72 /* SDWebImageCompat.m in Sources */,
@@ -770,6 +785,7 @@
 				02BCE2611B2298DA00EF3E72 /* SDWebImageManager.m in Sources */,
 				02BCE27D1B22998700EF3E72 /* MBProgressHUD.m in Sources */,
 				02BCE27A1B2298F200EF3E72 /* FMResultSet.m in Sources */,
+				028062651B29A49A00F68157 /* TCLoginView.m in Sources */,
 				02BCE25B1B2298DA00EF3E72 /* NSData+ImageContentType.m in Sources */,
 				021B3EC71B1F2F41008B586A /* STNavigationController.m in Sources */,
 				02BCE2351B2296EF00EF3E72 /* AFURLRequestSerialization.m in Sources */,

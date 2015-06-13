@@ -96,7 +96,7 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
     self.stringEncoding = NSUTF8StringEncoding;
 
     self.acceptableStatusCodes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 100)];
-    self.acceptableContentTypes = nil;
+    self.acceptableContentTypes = [NSSet setWithObjects:@"text/json",@"application/json", nil];
 
     return self;
 }
@@ -219,7 +219,7 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
         return nil;
     }
 
-    self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
+    self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
 
     return self;
 }
