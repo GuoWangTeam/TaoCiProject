@@ -2,13 +2,26 @@
 //  MineViewController.m
 //  陶瓷
 //
-//  Created by 王戈 on 15/6/13.
+//  Created by 王戈 on 15/6/10.
 //  Copyright (c) 2015年 王戈. All rights reserved.
 //
 
 #import "MineViewController.h"
+#import "AFNetworking.h"
+#import "TCLoginView.h"
 
 @interface MineViewController ()
+
+{
+    NSOperationQueue *operationQueue;
+}
+
+//@property (nonatomic, strong) UITextField *userName;
+//@property (nonatomic, strong) UITextField *password;
+//@property (nonatomic, strong) UITextField *confirmPW;
+//@property (nonatomic, strong) UIButton    *confirmBtn;
+//@property (nonatomic, strong) UIButton    *loginBtn;
+
 
 @end
 
@@ -17,88 +30,94 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    TCLoginView *loginView = [[[NSBundle mainBundle] loadNibNamed:@"TCLoginView" owner:nil options:nil] firstObject];
+    loginView.frame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT * 0.25);
+    
+    [self.view addSubview:loginView];
+    // Do any additional setup after loading the view from its nib.
+    
+//    self.view.backgroundColor = [UIColor greenColor];
+//    
+//    _userName = [[UITextField alloc] init];
+//    _password = [[UITextField alloc] init];
+//    _confirmPW = [[UITextField alloc] init];
+//    
+//    _confirmBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [_confirmBtn addTarget:self action:@selector(clickRegistBtn:) forControlEvents:UIControlEventTouchUpInside];
+//    _loginBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [_loginBtn addTarget:self action:@selector(clickLoginButton:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [self.view addSubview:_userName];
+//    [self.view addSubview:_password];
+//    [self.view addSubview:_confirmPW];
+//    [self.view addSubview:_confirmBtn];
+//    [self.view addSubview:_loginBtn];
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+//    _userName.frame = CGRectMake(20, 60, 200, 40);
+//    _userName.backgroundColor = [UIColor whiteColor];
+//    _password.frame = CGRectMake(20, 102, 200, 40);
+//    _password.backgroundColor = [UIColor whiteColor];
+//    _confirmPW.frame = CGRectMake(20 , 144, 200, 40);
+//    _confirmPW.backgroundColor = [UIColor whiteColor];
+//    
+//    _confirmBtn.frame = CGRectMake(20, 200, 80, 30);
+//    _loginBtn.frame = CGRectMake(20, 240, 80, 30);
+//    [_confirmBtn setTitle:@"注册" forState:UIControlStateNormal];
+//    [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
+}
+
+- (void)clickRegistBtn:(UIButton *)button
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //申明返回的结果是json类型
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    //申明请求的数据是json类型
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    //传入的参数
+    NSDictionary *parameters = @{@"Email":@"12345679@qq.com",@"Password":@"123456",@"ConfirmPassword":@"123456"};
+    //你的接口地址
+    NSString *url = @"http://101.200.232.88/Account/Register";
+    //发送请求
+    [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSArray *arr = [[operation.responseObject objectForKey:@"ModelState"] objectForKey:@""];
+        NSLog(@"Error: %@", arr.firstObject);
+    }];
+}
+
+
+- (void)clickLoginButton:(UIButton *)button
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //申明返回的结果是json类型
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    //申明请求的数据是json类型
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    //传入的参数
+    NSDictionary *parameters = @{@"grant_type":@"password",@"username":@"123456789@qq.com",@"password":@"123456"};
+    //你的接口地址
+    NSString *url = @"http://101.200.232.88/Token";
+    //发送请求
+    [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSHTTPURLResponse *response = [error.userInfo objectForKey:@"com.alamofire.serialization.response.error.response"];
+        NSLog(@"Error: %ld", (long)response.statusCode);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-}
-*/
 
 /*
 #pragma mark - Navigation
