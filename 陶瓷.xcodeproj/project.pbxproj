@@ -62,6 +62,7 @@
 		02BCE27D1B22998700EF3E72 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BCE27C1B22998700EF3E72 /* MBProgressHUD.m */; };
 		02BCE27F1B229A9900EF3E72 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BCE27E1B229A9900EF3E72 /* libsqlite3.dylib */; };
 		02BEECDA1B282C090032915E /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BEECD81B282C090032915E /* MineViewController.m */; };
+		02DF71861B2C3C8000CA6AD0 /* TCNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DF71851B2C3C8000CA6AD0 /* TCNetworkTool.m */; };
 		02E8D6DA1B25BD6F00B2A2EB /* ad.png in Resources */ = {isa = PBXBuildFile; fileRef = 02E8D6D91B25BD6F00B2A2EB /* ad.png */; };
 		02E8D7191B27124700B2A2EB /* CategoryBottomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E8D7181B27124700B2A2EB /* CategoryBottomCell.m */; };
 		02E8D71C1B2717DB00B2A2EB /* CategoryBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E8D71B1B2717DB00B2A2EB /* CategoryBtn.m */; };
@@ -188,6 +189,9 @@
 		02BCE27E1B229A9900EF3E72 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		02BEECD71B282C090032915E /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		02BEECD81B282C090032915E /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		02DF71831B2C3C8000CA6AD0 /* PortHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortHeader.h; sourceTree = "<group>"; };
+		02DF71841B2C3C8000CA6AD0 /* TCNetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCNetworkTool.h; sourceTree = "<group>"; };
+		02DF71851B2C3C8000CA6AD0 /* TCNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCNetworkTool.m; sourceTree = "<group>"; };
 		02E8D6D91B25BD6F00B2A2EB /* ad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad.png; sourceTree = "<group>"; };
 		02E8D7171B27124700B2A2EB /* CategoryBottomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryBottomCell.h; sourceTree = "<group>"; };
 		02E8D7181B27124700B2A2EB /* CategoryBottomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryBottomCell.m; sourceTree = "<group>"; };
@@ -290,12 +294,12 @@
 		021B3EB91B1F2D14008B586A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				02DF71821B2C3C8000CA6AD0 /* Tool */,
 				029FDA5C1B25202C001675C3 /* Other */,
 				021B3ED41B1F3158008B586A /* Category */,
 				021B3ED51B1F3158008B586A /* Lib */,
 				021B3EBA1B1F2D14008B586A /* Controller */,
 				021B3EC11B1F2EFD008B586A /* view */,
-				021B3ED21B1F2FEB008B586A /* Other */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -318,13 +322,6 @@
 				021B3EC31B1F2EFE008B586A /* STTabbar.m */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		021B3ED21B1F2FEB008B586A /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
 			sourceTree = "<group>";
 		};
 		021B3ED41B1F3158008B586A /* Category */ = {
@@ -643,6 +640,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		02DF71821B2C3C8000CA6AD0 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				02DF71831B2C3C8000CA6AD0 /* PortHeader.h */,
+				02DF71841B2C3C8000CA6AD0 /* TCNetworkTool.h */,
+				02DF71851B2C3C8000CA6AD0 /* TCNetworkTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -768,6 +775,7 @@
 				02BCE2651B2298DA00EF3E72 /* UIImage+MultiFormat.m in Sources */,
 				02BCE2641B2298DA00EF3E72 /* UIImage+GIF.m in Sources */,
 				029FDA751B2522B5001675C3 /* CategoryTableViewCell.m in Sources */,
+				02DF71861B2C3C8000CA6AD0 /* TCNetworkTool.m in Sources */,
 				08EF2BE71B22C96200F7768E /* HomeViewController.m in Sources */,
 				02BCE25F1B2298DA00EF3E72 /* SDWebImageDownloader.m in Sources */,
 				02BCE2361B2296EF00EF3E72 /* AFURLResponseSerialization.m in Sources */,
