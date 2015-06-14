@@ -72,7 +72,7 @@
     
     NSMutableDictionary *attris= [NSMutableDictionary dictionary];
     attris[NSFontAttributeName] = [UIFont boldSystemFontOfSize:20];
-    attris[NSForegroundColorAttributeName] = [UIColor blackColor];
+    attris[NSForegroundColorAttributeName] = [UIColor whiteColor];
     [appearance setTitleTextAttributes:attris];
 }
 @end

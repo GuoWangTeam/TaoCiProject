@@ -31,6 +31,21 @@
     
 }
 
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [self setNeedsStatusBarAppearanceUpdate];
+//}
+//
+//- (BOOL)prefersStatusBarHidden
+//{
+//    return YES;
+//}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark 设置子控制器
 // 添加各类自控制器
 - (void)addAllChildViewControllers

@@ -9,69 +9,168 @@
 #import "MineViewController.h"
 #import "AFNetworking.h"
 #import "TCLoginView.h"
+#import "MineLoginViewController.h"
 
-@interface MineViewController ()
+#define kDefaultNavHeight (IOS7_OR_LATER?64:44)
+#define kDefaultNavTitleViewHeight 44
+
+
+@interface MineViewController () <UITableViewDelegate ,UITableViewDataSource,TCLoginViewDelegate>
 
 {
     NSOperationQueue *operationQueue;
+    UIButton *_setButton;
+    UIButton *_messageButton;
+    MineLoginViewController *_mineLoginViewCV;
 }
-
-//@property (nonatomic, strong) UITextField *userName;
-//@property (nonatomic, strong) UITextField *password;
-//@property (nonatomic, strong) UITextField *confirmPW;
-//@property (nonatomic, strong) UIButton    *confirmBtn;
-//@property (nonatomic, strong) UIButton    *loginBtn;
-
 
 @end
 
 @implementation MineViewController
 
+
+#pragma mark - lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setupNavigationBar];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    TCLoginView *loginView = [[[NSBundle mainBundle] loadNibNamed:@"TCLoginView" owner:nil options:nil] firstObject];
-    loginView.frame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT * 0.25);
+    [self setupChildView];
+}
+
+- (void)setupNavigationBar
+{
+    self.title = @"我的账户";
     
-    [self.view addSubview:loginView];
-    // Do any additional setup after loading the view from its nib.
+    NSString *colorStr = [NSString stringWithFormat:@"#54B6C9"];
+    [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithString:colorStr]];
     
-//    self.view.backgroundColor = [UIColor greenColor];
-//    
-//    _userName = [[UITextField alloc] init];
-//    _password = [[UITextField alloc] init];
-//    _confirmPW = [[UITextField alloc] init];
-//    
-//    _confirmBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-//    [_confirmBtn addTarget:self action:@selector(clickRegistBtn:) forControlEvents:UIControlEventTouchUpInside];
-//    _loginBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-//    [_loginBtn addTarget:self action:@selector(clickLoginButton:) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    [self.view addSubview:_userName];
-//    [self.view addSubview:_password];
-//    [self.view addSubview:_confirmPW];
-//    [self.view addSubview:_confirmBtn];
-//    [self.view addSubview:_loginBtn];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithString:colorStr];
     
+    
+    
+    UIImage *setImg = [UIImage imageNamed:@""];
+    _setButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    _setButton.frame = CGRectMake(0, 0, 30,30);
+    [_setButton setTitle:@"设置" forState:UIControlStateNormal];
+    [_setButton addTarget:self action:@selector(clickSetButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_setButton];
+
+    UIImage *messageImg = [UIImage imageNamed:@""];
+    _messageButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    _messageButton.frame = CGRectMake(0, 0, 30,30);
+    [_messageButton setTitle:@"信息" forState:UIControlStateNormal];
+    [_messageButton addTarget:self action:@selector(clickMessageButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_messageButton];
+    
+    self.navigationItem.leftBarButtonItem = leftButtonItem;
+    self.navigationItem.rightBarButtonItem = rightButtonItem;
     
 }
 
-- (void)viewDidAppear:(BOOL)animated
+
+- (void)setupChildView
 {
-//    _userName.frame = CGRectMake(20, 60, 200, 40);
-//    _userName.backgroundColor = [UIColor whiteColor];
-//    _password.frame = CGRectMake(20, 102, 200, 40);
-//    _password.backgroundColor = [UIColor whiteColor];
-//    _confirmPW.frame = CGRectMake(20 , 144, 200, 40);
-//    _confirmPW.backgroundColor = [UIColor whiteColor];
-//    
-//    _confirmBtn.frame = CGRectMake(20, 200, 80, 30);
-//    _loginBtn.frame = CGRectMake(20, 240, 80, 30);
-//    [_confirmBtn setTitle:@"注册" forState:UIControlStateNormal];
-//    [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
+    TCLoginView *loginView = [[[NSBundle mainBundle] loadNibNamed:@"TCLoginView" owner:nil options:nil] firstObject];
+    loginView.delegate = self;
+    loginView.frame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT * 0.25);
+    loginView.isLogin = NO;
+    [self.view addSubview:loginView];
+    
+    //    TCMineFirstCell *firstCell = [[[NSBundle mainBundle] loadNibNamed:@"TCMineFirstCell" owner:nil options:nil] firstObject];
+    //    firstCell.frame = CGRectMake(0, CGRectGetMaxY(loginView.frame), SCREEN_WIDTH, SCREEN_HEIGHT * 0.22);
+    //    [self.view addSubview:firstCell];
+    CGFloat tabieViewY = CGRectGetMaxY(loginView.frame);
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, tabieViewY, SCREEN_WIDTH,SCREEN_HEIGHT - tabieViewY) style:UITableViewStyleGrouped];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [self.view addSubview:tableView];
 }
+
+#pragma mark - Action
+- (void)clickSetButton:(UIButton *)button
+{
+    
+}
+
+- (void)clickMessageButton:(UIButton *)button
+{
+    
+}
+
+- (void)userLogin
+{
+    _mineLoginViewCV = [[MineLoginViewController alloc] init];
+    [self.navigationController pushViewController:_mineLoginViewCV animated:YES];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"TCMineCell";
+    // 1.取缓存中取
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
+    }
+    
+    switch (indexPath.section) {
+        case 0:
+            if (indexPath.row == 0) {
+                cell.textLabel.text = @"我的钱包";
+            } else {
+                cell.textLabel.text = @"账户余额";
+            }
+            break;
+        case 1:
+            if (indexPath.row == 0) {
+                cell.textLabel.text = @"发布信息";
+            } else {
+                cell.textLabel.text = @"信息管理";
+            }
+            break;
+        case 2:
+            if (indexPath.row == 0) {
+                cell.textLabel.text = @"我的关注";
+            } else {
+                cell.textLabel.text = @"联系客服";
+            }
+            break;
+        default:
+            break;
+    }
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 9;
+}
+
+
 
 - (void)clickRegistBtn:(UIButton *)button
 {
@@ -119,14 +218,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

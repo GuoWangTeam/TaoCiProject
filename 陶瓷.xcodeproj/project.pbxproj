@@ -18,8 +18,6 @@
 		021B3EFD1B1F374B008B586A /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021B3EFC1B1F374B008B586A /* DiscoverViewController.m */; };
 		021B3F031B1F3765008B586A /* TailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021B3F021B1F3765008B586A /* TailViewController.m */; };
 		021B3F091B1F392D008B586A /* UIImage+iOS6and7.m in Sources */ = {isa = PBXBuildFile; fileRef = 021B3F081B1F392D008B586A /* UIImage+iOS6and7.m */; };
-		025E4ED01B29C1810012AFAB /* MineTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 025E4ECF1B29C1810012AFAB /* MineTableView.m */; };
-		025E4ED21B29C1980012AFAB /* MineTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 025E4ED11B29C1980012AFAB /* MineTableView.xib */; };
 		028062651B29A49A00F68157 /* TCLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 028062641B29A49A00F68157 /* TCLoginView.m */; };
 		0280626B1B29A4CD00F68157 /* TCLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0280626A1B29A4CD00F68157 /* TCLoginView.xib */; };
 		029FDA5F1B25202C001675C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 029FDA5E1B25202C001675C3 /* AppDelegate.m */; };
@@ -72,6 +70,9 @@
 		0879675A1B2C3CA400E24D0F /* HomeHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087967531B2C3CA400E24D0F /* HomeHeadTableViewCell.xib */; };
 		0879675B1B2C3CA400E24D0F /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 087967551B2C3CA400E24D0F /* HomeTableViewCell.m */; };
 		0879675C1B2C3CA400E24D0F /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 087967561B2C3CA400E24D0F /* HomeTableViewCell.xib */; };
+		0896A3AD1B2D5C350081DC4A /* UIColor+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896A3AC1B2D5C350081DC4A /* UIColor+NSString.m */; };
+		0896A3B31B2D785F0081DC4A /* MineLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0896A3B11B2D785F0081DC4A /* MineLoginViewController.m */; };
+		0896A3B41B2D785F0081DC4A /* MineLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0896A3B21B2D785F0081DC4A /* MineLoginViewController.xib */; };
 		08EF2BE71B22C96200F7768E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EF2BE51B22C96200F7768E /* HomeViewController.m */; };
 		08EF2BE81B22C96200F7768E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08EF2BE61B22C96200F7768E /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
@@ -110,9 +111,6 @@
 		021B3F021B1F3765008B586A /* TailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TailViewController.m; sourceTree = "<group>"; };
 		021B3F071B1F392D008B586A /* UIImage+iOS6and7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+iOS6and7.h"; sourceTree = "<group>"; };
 		021B3F081B1F392D008B586A /* UIImage+iOS6and7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+iOS6and7.m"; sourceTree = "<group>"; };
-		025E4ECE1B29C1810012AFAB /* MineTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableView.h; sourceTree = "<group>"; };
-		025E4ECF1B29C1810012AFAB /* MineTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableView.m; sourceTree = "<group>"; };
-		025E4ED11B29C1980012AFAB /* MineTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineTableView.xib; sourceTree = "<group>"; };
 		028062631B29A49A00F68157 /* TCLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCLoginView.h; sourceTree = "<group>"; };
 		028062641B29A49A00F68157 /* TCLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCLoginView.m; sourceTree = "<group>"; };
 		0280626A1B29A4CD00F68157 /* TCLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TCLoginView.xib; sourceTree = "<group>"; };
@@ -212,6 +210,11 @@
 		087967541B2C3CA400E24D0F /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		087967551B2C3CA400E24D0F /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		087967561B2C3CA400E24D0F /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		0896A3AB1B2D5C350081DC4A /* UIColor+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+NSString.h"; sourceTree = "<group>"; };
+		0896A3AC1B2D5C350081DC4A /* UIColor+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NSString.m"; sourceTree = "<group>"; };
+		0896A3B01B2D785F0081DC4A /* MineLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineLoginViewController.h; sourceTree = "<group>"; };
+		0896A3B11B2D785F0081DC4A /* MineLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineLoginViewController.m; sourceTree = "<group>"; };
+		0896A3B21B2D785F0081DC4A /* MineLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineLoginViewController.xib; sourceTree = "<group>"; };
 		08EF2BE41B22C96200F7768E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		08EF2BE51B22C96200F7768E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		08EF2BE61B22C96200F7768E /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -640,6 +643,9 @@
 			children = (
 				02BEECD71B282C090032915E /* MineViewController.h */,
 				02BEECD81B282C090032915E /* MineViewController.m */,
+				0896A3B01B2D785F0081DC4A /* MineLoginViewController.h */,
+				0896A3B11B2D785F0081DC4A /* MineLoginViewController.m */,
+				0896A3B21B2D785F0081DC4A /* MineLoginViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -657,9 +663,6 @@
 				028062631B29A49A00F68157 /* TCLoginView.h */,
 				028062641B29A49A00F68157 /* TCLoginView.m */,
 				0280626A1B29A4CD00F68157 /* TCLoginView.xib */,
-				025E4ECE1B29C1810012AFAB /* MineTableView.h */,
-				025E4ECF1B29C1810012AFAB /* MineTableView.m */,
-				025E4ED11B29C1980012AFAB /* MineTableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -670,6 +673,8 @@
 				02DF71831B2C3C8000CA6AD0 /* PortHeader.h */,
 				02DF71841B2C3C8000CA6AD0 /* TCNetworkTool.h */,
 				02DF71851B2C3C8000CA6AD0 /* TCNetworkTool.m */,
+				0896A3AB1B2D5C350081DC4A /* UIColor+NSString.h */,
+				0896A3AC1B2D5C350081DC4A /* UIColor+NSString.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -755,6 +760,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				029FDA7B1B252312001675C3 /* big.png in Resources */,
+				0896A3B41B2D785F0081DC4A /* MineLoginViewController.xib in Resources */,
 				029FDA7C1B252312001675C3 /* cate.png in Resources */,
 				021B3EA31B1F2B51008B586A /* LaunchScreen.xib in Resources */,
 				0280626B1B29A4CD00F68157 /* TCLoginView.xib in Resources */,
@@ -763,7 +769,6 @@
 				021B3EA01B1F2B51008B586A /* Images.xcassets in Resources */,
 				087967581B2C3CA400E24D0F /* HomeHeaderView.xib in Resources */,
 				02E8D6DA1B25BD6F00B2A2EB /* ad.png in Resources */,
-				025E4ED21B29C1980012AFAB /* MineTableView.xib in Resources */,
 				0879675C1B2C3CA400E24D0F /* HomeTableViewCell.xib in Resources */,
 				08EF2BE81B22C96200F7768E /* HomeViewController.xib in Resources */,
 			);
@@ -794,7 +799,6 @@
 				021B3EC41B1F2EFE008B586A /* STTabbar.m in Sources */,
 				02BCE2771B2298F200EF3E72 /* FMDatabaseAdditions.m in Sources */,
 				02E8D71C1B2717DB00B2A2EB /* CategoryBtn.m in Sources */,
-				025E4ED01B29C1810012AFAB /* MineTableView.m in Sources */,
 				02BEECDA1B282C090032915E /* MineViewController.m in Sources */,
 				021B3EC01B1F2EC8008B586A /* STTableBarController.m in Sources */,
 				02BCE25D1B2298DA00EF3E72 /* SDWebImageCompat.m in Sources */,
@@ -824,6 +828,7 @@
 				028062651B29A49A00F68157 /* TCLoginView.m in Sources */,
 				02BCE25B1B2298DA00EF3E72 /* NSData+ImageContentType.m in Sources */,
 				021B3EC71B1F2F41008B586A /* STNavigationController.m in Sources */,
+				0896A3AD1B2D5C350081DC4A /* UIColor+NSString.m in Sources */,
 				02BCE2351B2296EF00EF3E72 /* AFURLRequestSerialization.m in Sources */,
 				087967571B2C3CA400E24D0F /* HomeHeaderView.m in Sources */,
 				02BCE2301B2296EF00EF3E72 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -834,6 +839,7 @@
 				02BCE2691B2298DA00EF3E72 /* UIView+WebCacheOperation.m in Sources */,
 				02BCE2791B2298F200EF3E72 /* FMDatabaseQueue.m in Sources */,
 				02BCE2781B2298F200EF3E72 /* FMDatabasePool.m in Sources */,
+				0896A3B31B2D785F0081DC4A /* MineLoginViewController.m in Sources */,
 				02BCE2671B2298DA00EF3E72 /* UIImageView+HighlightedWebCache.m in Sources */,
 				02BCE2331B2296EF00EF3E72 /* AFSecurityPolicy.m in Sources */,
 			);

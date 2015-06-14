@@ -22,7 +22,6 @@
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds;
     [self.window makeKeyAndVisible];
-    
     self.window.rootViewController = [[STTableBarController alloc] init];
     
     return YES;
