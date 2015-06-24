@@ -12,6 +12,12 @@
 #import "UIView+Extension.h"
 #import "UIImage+iOS6and7.h"
 #import "TCNetworkTool.h"
+#import "UIColor+NSString.h"
+#import "MBProgressHUD.h"
+
+#import "AreaModel.h"
+#import "STAlertView.h"
+#import "SVProgressHUD.h"
 
 
 #define SCREEN_WIDTH  [[UIScreen mainScreen] bounds].size.width

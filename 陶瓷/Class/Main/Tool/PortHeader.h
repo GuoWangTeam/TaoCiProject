@@ -24,3 +24,17 @@
 #define SET_PASSWORD_URL MAIN_PATH@"Account/SetPassword"
 
 #define GET_USERINFO MAIN_PATH@"Account/GetUserInfo"
+
+/**
+ *  获取验证码
+ */
+#define GetVerifyCode_URL MAIN_PATH@"Account/GetVerifyCode"
+
+/**
+ *  获取地域信息
+ */
+#define GetAllCityWithPid(pid) [NSString stringWithFormat:@"%@Area/GetAllCity?pid=%@",MAIN_PATH,(pid)]
+/**
+ *  获取商铺信息
+ */
+#define RentListWithPN(pn) [NSString stringWithFormat:@"%@Rent/List?pn=%@",MAIN_PATH,(pn)]

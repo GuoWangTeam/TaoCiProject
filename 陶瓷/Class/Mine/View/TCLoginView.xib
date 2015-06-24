@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E33b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -44,30 +44,40 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxp-16-lt2" userLabel="icon btn">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxp-16-lt2" userLabel="icon btn">
                             <rect key="frame" x="20" y="20" width="271" height="271"/>
-                            <color key="backgroundColor" red="0.99704961420000005" green="1" blue="0.50700158319999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="sxp-16-lt2" secondAttribute="height" id="wxU-EH-NYO"/>
                             </constraints>
-                            <state key="normal" title="Button">
+                            <state key="normal" image="Mine_No_Person.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大傻逼d " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yS5-a4-Ma6" userLabel="name label">
-                            <rect key="frame" x="306" y="132" width="59" height="18"/>
+                            <rect key="frame" x="306" y="131" width="59" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnc-g3-3lf" userLabel="level label">
-                            <rect key="frame" x="306" y="157" width="36" height="17"/>
+                            <rect key="frame" x="306" y="156" width="36" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21R-6D-8eA" userLabel="loginbtn">
+                            <rect key="frame" x="226" y="151" width="148" height="27"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="您尚未登录,请点击文字登陆">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="login:" destination="iN0-l3-epB" eventType="touchUpInside" id="on9-qw-cAy"/>
+                            </connections>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="9ui-Px-GGl" firstAttribute="leading" secondItem="Tlh-EM-MGb" secondAttribute="trailing" id="7pu-xQ-qjO"/>
                         <constraint firstItem="sxp-16-lt2" firstAttribute="bottom" secondItem="0wW-Ts-Lnk" secondAttribute="bottom" id="8Gy-hX-T4a"/>
@@ -84,8 +94,10 @@
                         <constraint firstItem="9k9-33-93Z" firstAttribute="height" secondItem="9ui-Px-GGl" secondAttribute="height" id="YXN-6S-wFk"/>
                         <constraint firstItem="pnc-g3-3lf" firstAttribute="leading" secondItem="sxp-16-lt2" secondAttribute="trailing" constant="15" id="aPb-0E-WZT"/>
                         <constraint firstItem="sxp-16-lt2" firstAttribute="height" secondItem="BN7-i9-ubI" secondAttribute="height" multiplier="14:31" id="bCP-w8-a5x"/>
+                        <constraint firstAttribute="centerX" secondItem="21R-6D-8eA" secondAttribute="centerX" id="bru-Cs-cyg"/>
                         <constraint firstAttribute="bottom" secondItem="9k9-33-93Z" secondAttribute="bottom" id="btt-YP-jBF"/>
                         <constraint firstAttribute="width" secondItem="0wW-Ts-Lnk" secondAttribute="width" multiplier="2:1" id="fQz-9z-oHz"/>
+                        <constraint firstItem="21R-6D-8eA" firstAttribute="centerY" secondItem="sxp-16-lt2" secondAttribute="centerY" constant="8.5" id="gXl-Df-lHJ"/>
                         <constraint firstAttribute="trailing" secondItem="9ui-Px-GGl" secondAttribute="trailing" id="iT3-9h-vxx"/>
                         <constraint firstAttribute="bottom" secondItem="9ui-Px-GGl" secondAttribute="bottom" id="ife-df-75J"/>
                         <constraint firstItem="sxp-16-lt2" firstAttribute="top" secondItem="BN7-i9-ubI" secondAttribute="top" constant="20" id="lvi-c0-mTM"/>
@@ -95,7 +107,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.1070548223" blue="0.1089404164" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="BN7-i9-ubI" secondAttribute="trailing" id="1XJ-qc-txm"/>
                 <constraint firstAttribute="bottom" secondItem="BN7-i9-ubI" secondAttribute="bottom" id="H6r-ba-Orb"/>
@@ -108,10 +120,15 @@
                 <outlet property="favoriteBtn" destination="Tlh-EM-MGb" id="3oT-rb-hly"/>
                 <outlet property="iconBtn" destination="sxp-16-lt2" id="HJo-sW-wpz"/>
                 <outlet property="levelLabel" destination="pnc-g3-3lf" id="71Z-Oj-UfB"/>
+                <outlet property="loginBtn" destination="21R-6D-8eA" id="1gX-4O-MjD"/>
                 <outlet property="messageBtn" destination="9ui-Px-GGl" id="QMw-B4-tmh"/>
                 <outlet property="nameLabel" destination="yS5-a4-Ma6" id="5hK-5b-32L"/>
+                <outlet property="whiteLine" destination="9k9-33-93Z" id="elM-y8-zjc"/>
             </connections>
             <point key="canvasLocation" x="200" y="11"/>
         </view>
     </objects>
+    <resources>
+        <image name="Mine_No_Person.png" width="180" height="180"/>
+    </resources>
 </document>

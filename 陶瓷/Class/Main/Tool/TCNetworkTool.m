@@ -106,5 +106,91 @@
     }];
 }
 
+- (void)tokenWithEmail:(NSString *)email password:(NSString *)password andSuccessBlocks:(NetDownLoadSuccessBlock)registerSuccess andFailureBlocks:(NetDownLoadFailureBlock)registerFailure
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    //申明返回的结果是json类型
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    //申明请求的数据是json类型
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
+    NSDictionary *parameters = @{@"grant_type":@"password",
+                                 @"username":email,
+                                 @"password":password};
+    
+    NSString *url = @"http://101.200.232.88/Token";
+    //发送请求
+    [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSHTTPURLResponse *response = [error.userInfo objectForKey:@"com.alamofire.serialization.response.error.response"];
+        NSLog(@"Error: %ld", (long)response.statusCode);
+    }];
+    
+}
+
+- (void)verifyCodeWithCallNumber:(NSString *)number andSuccessBlocks:(NetDownLoadSuccessBlock)success andFailureBlocks:(NetDownLoadFailureBlock)failure
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //申明返回的结果是json类型
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    //申明请求的数据是json类型
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    //传入的参数
+    NSDictionary *parameters = @{@"Number":number};
+    //你的接口地址
+    //发送请求
+    [manager POST:GetVerifyCode_URL parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        success([[responseObject  objectForKey:@"Data"] objectForKey:@"code"]);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure([NSString stringWithFormat:@"failed ! \noperation = %@ \n error = %@",operation,error]);
+    }];
+}
+
+- (void)areaWithParentID:(NSString *)parentID andSuccessBlocks:(NetDownLoadSuccessArrayBlock)success andFailureBlocks:(NetDownLoadFailureBlock)failure
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //申明返回的结果是json类型
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [manager GET:GetAllCityWithPid(parentID) parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSNumber *successed = operation.responseObject[@"Successed"];                               
+                               
+        if ( [successed intValue] == 1) {
+            
+            NSArray *array = operation.responseObject[@"Data"];
+            NSMutableArray *areaArray = [NSMutableArray arrayWithCapacity:array.count];
+            for (NSDictionary *dic in array) {
+                AreaModel *area = [AreaModel areaModelWithDic:dic];
+                [areaArray addObject:area];
+            }
+            success(areaArray);
+        } else {
+            failure(@"获取地区失败!");
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"fail GetVerifyCode_URL operation %@",operation);
+        NSLog(@"fail GetVerifyCode_URL error %@",error);
+    }];
+}
+
+// Santor 2015.6.23
+- (void)rentListWithPn:(NSString *)pn andSuccessBlocks:(NetDownLoadSuccessArrayBlock)success andFailureBlocks:(NetDownLoadFailureBlock)failure {
+   
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //申明返回的结果是json类型
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    //申明请求的数据是json类型
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
+    [manager POST:RentListWithPN(pn) parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"success GetVerifyCode_URL operation %@",operation);
+        NSLog(@"success GetVerifyCode_URL responseObject %@",responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }];
+
+}
 
 @end

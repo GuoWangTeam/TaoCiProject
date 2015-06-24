@@ -16,18 +16,31 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *favoriteBtn;
 @property (weak, nonatomic) IBOutlet UIButton *messageBtn;
+@property (weak, nonatomic) IBOutlet UIView *whiteLine;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end
 
 
 @implementation TCLoginView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)setIsLogin:(BOOL)isLogin
+{
+    _isLogin = isLogin;
+    _favoriteBtn.hidden = !isLogin;
+    _messageBtn.hidden = !isLogin;
+    _whiteLine.hidden = !isLogin;
+    _addressBtn.hidden = !isLogin;
+    _nameLabel.hidden = !isLogin;
+    _levelLabel.hidden = !isLogin;
+    
+    _loginBtn.hidden = isLogin;
 }
-*/
+
+- (IBAction)login:(UIButton *)sender {
+    if ([self.delegate respondsToSelector:@selector(userLogin)]) {
+        [self.delegate userLogin];
+    }
+}
 
 @end

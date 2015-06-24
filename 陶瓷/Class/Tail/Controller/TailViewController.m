@@ -18,6 +18,10 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor yellowColor];
+    
+    [[TCNetworkTool sharedNetTool] rentListWithPn:@"1" andSuccessBlocks:^(NSArray *resultArray) {
+        
+    } andFailureBlocks:nil];
 }
 
 - (void)didReceiveMemoryWarning {

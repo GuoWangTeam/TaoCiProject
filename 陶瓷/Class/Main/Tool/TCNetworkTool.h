@@ -45,4 +45,24 @@ typedef void (^NetDownLoadSuccessArrayBlock)(NSArray *resultArray);
 - (void)setPassword:(NSString *)password confirmPassword:(NSString *)confirmPassword
    andSuccessBlocks:(NetDownLoadSuccessBlock)modifySuccess andFailureBlocks:(NetDownLoadFailureBlock)modifyFailure;
 
+/**
+ *  获取验证码
+ *
+ *  @param number        手机号码
+ */
+- (void)verifyCodeWithCallNumber:(NSString *)number andSuccessBlocks:(NetDownLoadSuccessBlock)success andFailureBlocks:(NetDownLoadFailureBlock)failure;
+
+/**
+ *  获取区域信息
+ *
+ *  @param parentID 父类ID 默认为1
+ */
+- (void)areaWithParentID:(NSString *)parentID andSuccessBlocks:(NetDownLoadSuccessArrayBlock)success andFailureBlocks:(NetDownLoadFailureBlock)failure;
+
+/**
+ *  获取商铺信息
+ *
+ *  @param pn      商铺列表
+ */
+- (void)rentListWithPn:(NSString *)pn andSuccessBlocks:(NetDownLoadSuccessArrayBlock)success andFailureBlocks:(NetDownLoadFailureBlock)failure;
 @end

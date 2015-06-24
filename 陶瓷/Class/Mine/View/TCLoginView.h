@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TCLoginViewDelegate <NSObject>
+
+- (void)userLogin;
+
+@end
+
 @interface TCLoginView : UIView
+
+@property (nonatomic ,assign) BOOL isLogin;
+@property (nonatomic, weak) id<TCLoginViewDelegate>delegate;
 
 @end
