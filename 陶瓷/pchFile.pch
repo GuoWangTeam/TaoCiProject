@@ -16,6 +16,9 @@
 #import "MBProgressHUD.h"
 
 #import "AreaModel.h"
+#import "CategoryModel.h"
+#import "CompanyModel.h"
+
 #import "STAlertView.h"
 #import "SVProgressHUD.h"
 
@@ -29,5 +32,17 @@
 #define TCLog(...) NSLog(@"%s %d \n %@\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
 
 #define TCMainBGColor TCColor(40, 163 ,200, 1)
+
+// 登录状态
+#define LOGIN_STATE @"loginState"
+
+//尺寸相关
+#define kDefaultStatusBarHeight 20
+#define kDefaultWindowSize [UIScreen mainScreen].bounds.size
+#define kDefaultWindowWidth [UIScreen mainScreen].bounds.size.width
+#define kDefaultWindowHeight [UIScreen mainScreen].bounds.size.height
+#define kDefaultNavHeight (IOS7_OR_LATER?64:44)
+#define kDefaultNavTitleViewHeight 44
+#define kUIPickerViewHeight 216
 
 #endif

@@ -23,6 +23,7 @@
     UIButton *_messageButton;
     MineLoginViewController *_mineLoginViewCV;
 }
+@property (nonatomic, strong) TCLoginView *loginView;
 
 @end
 
@@ -42,24 +43,18 @@
 {
     self.title = @"我的账户";
     
-    NSString *colorStr = [NSString stringWithFormat:@"#54B6C9"];
-    [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithString:colorStr]];
-    
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithString:colorStr];
     
     
     
-    UIImage *setImg = [UIImage imageNamed:@""];
+    
+//    UIImage *setImg = [UIImage imageNamed:@""];
     _setButton = [UIButton buttonWithType:UIButtonTypeSystem];
     _setButton.frame = CGRectMake(0, 0, 30,30);
     [_setButton setTitle:@"设置" forState:UIControlStateNormal];
     [_setButton addTarget:self action:@selector(clickSetButton:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_setButton];
 
-    UIImage *messageImg = [UIImage imageNamed:@""];
+//    UIImage *messageImg = [UIImage imageNamed:@""];
     _messageButton = [UIButton buttonWithType:UIButtonTypeSystem];
     _messageButton.frame = CGRectMake(0, 0, 30,30);
     [_messageButton setTitle:@"信息" forState:UIControlStateNormal];
@@ -71,6 +66,13 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([[[NSUserDefaults standardUserDefaults] valueForKey:LOGIN_STATE] isEqualToString:@"YES"]) {
+        self.loginView.isLogin = YES;
+    }
+}
+
 
 - (void)setupChildView
 {
@@ -79,6 +81,7 @@
     loginView.frame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT * 0.25);
     loginView.isLogin = NO;
     [self.view addSubview:loginView];
+    self.loginView = loginView;
     
     //    TCMineFirstCell *firstCell = [[[NSBundle mainBundle] loadNibNamed:@"TCMineFirstCell" owner:nil options:nil] firstObject];
     //    firstCell.frame = CGRectMake(0, CGRectGetMaxY(loginView.frame), SCREEN_WIDTH, SCREEN_HEIGHT * 0.22);

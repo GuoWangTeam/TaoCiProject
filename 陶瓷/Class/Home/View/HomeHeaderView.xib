@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,22 +11,22 @@
             <rect key="frame" x="0.0" y="-1" width="493" height="173"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bb0-L0-Qaj">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bb0-L0-Qaj">
                     <rect key="frame" x="0.0" y="0.0" width="493" height="173"/>
-                    <subviews>
-                        <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="3wm-63-dzA">
-                            <rect key="frame" x="227" y="128" width="39" height="37"/>
-                        </pageControl>
-                    </subviews>
                     <connections>
                         <outlet property="delegate" destination="iN0-l3-epB" id="kOX-ms-mza"/>
                     </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bb0-L0-Qaj" secondAttribute="bottom" id="HeH-3T-jmz"/>
+                <constraint firstAttribute="trailing" secondItem="bb0-L0-Qaj" secondAttribute="trailing" id="TmE-DJ-Nds"/>
+                <constraint firstItem="bb0-L0-Qaj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WAQ-tL-yya"/>
+                <constraint firstItem="bb0-L0-Qaj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fn3-NC-Sup"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="pageControl" destination="3wm-63-dzA" id="hyK-yw-aqD"/>
                 <outlet property="scrollView" destination="bb0-L0-Qaj" id="D5n-4h-gzm"/>
             </connections>
             <point key="canvasLocation" x="227.5" y="585.5"/>

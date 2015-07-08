@@ -50,7 +50,7 @@
 // 添加各类自控制器
 - (void)addAllChildViewControllers
 {
-    HomeViewController *home = [[HomeViewController alloc]init];
+    HomeViewController *home = [[HomeViewController alloc] init];
     [self addChildViewController:home Title:@"首页" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
     
     CategoryViewController *category = [[CategoryViewController alloc]init];
@@ -99,6 +99,7 @@
 // 设置自定义tabbar
 - (void)setCustomTabBar
 {
+    self.tabBar.translucent = NO;
 //    STTabbar *customTabbar = [[STTabbar alloc]init];
 //    customTabbar.delegate1 = self;
 //    [self setValue:customTabbar forKeyPath:@"tabBar"];

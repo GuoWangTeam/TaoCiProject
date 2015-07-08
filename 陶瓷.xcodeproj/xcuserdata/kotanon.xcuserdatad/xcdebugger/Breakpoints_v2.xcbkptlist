@@ -99,13 +99,109 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x9676;&#x74f7;/Class/Mine/Controller/MineViewController.m"
-            timestampString = "455966705.071246"
+            filePath = "&#x9676;&#x74f7;/Class/Login/RegisterController.m"
+            timestampString = "457348664.356722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "-clickLoginButton:"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "-submitToRegister"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RegisterController submitToRegister]"
+                  moduleName = "&#x9676;&#x74f7;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kotanon/Downloads/TaoCiProject%202/%E9%99%B6%E7%93%B7/Class/Login/RegisterController.m"
+                  timestampString = "458037535.211906"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "66">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__38-[RegisterController submitToRegister]_block_invoke"
+                  moduleName = "&#x9676;&#x74f7;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kotanon/Downloads/TaoCiProject%202/%E9%99%B6%E7%93%B7/Class/Login/RegisterController.m"
+                  timestampString = "458037535.212036"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "43">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x9676;&#x74f7;/Class/Login/RegisterWithPhoneNoController.m"
+            timestampString = "457357932.238624"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "-nestStep"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x9676;&#x74f7;/Class/Main/Tool/TCNetworkTool.m"
+            timestampString = "457358000.020815"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-registerWithEmail:password:confirmPassword:verifyCode:CityId:andSuccessBlocks:andFailureBlocks:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x9676;&#x74f7;/Class/Main/Tool/TCNetworkTool.m"
+            timestampString = "457358019.905357"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "-registerWithEmail:password:confirmPassword:verifyCode:CityId:andSuccessBlocks:andFailureBlocks:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x9676;&#x74f7;/Class/Main/Tool/TCNetworkTool.m"
+            timestampString = "458037154.908088"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
+            landmarkName = "-getTailDetailInfoWithId:SuccessBlocks:andFailureBlocks:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -44,22 +44,24 @@
 
 #pragma mark - 选择地区相关
 - (IBAction)chooseAreaButton:(UIButton *)sender {
+    
+    [self.view endEditing:YES];
+    
+    [SVProgressHUD showWithStatus:@"获取地域信息.. 请稍候"];
     // 点击的是省
     if ([sender.currentTitle isEqualToString:@"省"]) {
         if (self.areaView.y == ViewBottom) {
-            dispatch_async(self.requestQueue, ^{
-                
-                _isChoosingCity = NO;
-                
-                [[TCNetworkTool sharedNetTool] areaWithParentID:@"1" andSuccessBlocks:^(NSArray *resultArray) {
-                    self.areaDataSource = [resultArray copy];
-                    [self reloadAreaViewData];
-                    [self moveAreaViewUp:YES];
-                    
-                } andFailureBlocks:^(NSString *failureMessage) {
-                    NSLog(@"%@",failureMessage);
-                }];
-            });
+        
+            _isChoosingCity = NO;
+            
+            [[TCNetworkTool sharedNetTool] areaWithParentID:@"1" andSuccessBlocks:^(NSArray *resultArray) {
+                self.areaDataSource = [resultArray copy];
+                [self reloadAreaViewData];
+                [self moveAreaViewUp:YES];
+                [SVProgressHUD dismiss];
+            } andFailureBlocks:^(NSString *failureMessage) {
+               [SVProgressHUD dismiss];
+            }];
 
         }
     }
@@ -67,20 +69,18 @@
     else if ([sender.currentTitle isEqualToString:@"市"]) {
         // 如果已经选择了省份 ,就根据省份选择城市信息
         if (_currentProvince) {
-            dispatch_async(self.requestQueue, ^{
+            _isChoosingCity = YES;
+            
+            [[TCNetworkTool sharedNetTool] areaWithParentID:_currentProvince.ID andSuccessBlocks:^(NSArray *resultArray) {
                 
-                _isChoosingCity = YES;
+                self.areaDataSource = [resultArray copy];
+                [self reloadAreaViewData];
+                [self moveAreaViewUp:YES];
+                [SVProgressHUD dismiss];
                 
-                [[TCNetworkTool sharedNetTool] areaWithParentID:_currentProvince.ID andSuccessBlocks:^(NSArray *resultArray) {
-                    
-                    self.areaDataSource = [resultArray copy];
-                    [self reloadAreaViewData];
-                    [self moveAreaViewUp:YES];
-                    
-                } andFailureBlocks:^(NSString *failureMessage) {
-                    NSLog(@"%@",failureMessage);
-                }];
-            });
+            } andFailureBlocks:^(NSString *failureMessage) {
+                [SVProgressHUD dismiss];
+            }];
         }
         // 如果还没选择省份 就让丫先选省份 !
         else {
@@ -183,11 +183,11 @@
     
     [SVProgressHUD showWithStatus:@"正在注册 请稍候"];
     
-    [[TCNetworkTool sharedNetTool] registerWithEmail:_nameTextField.text password:_passwordTextField.text confirmPassword:_confirmTextField.text andSuccessBlocks:^(NSString *successMessage) {
+    [[TCNetworkTool sharedNetTool] registerWithEmail:_nameTextField.text password:_passwordTextField.text confirmPassword:_confirmTextField.text verifyCode:_verify CityId:_currentCity.ID andSuccessBlocks:^(NSString *successMessage) {
         TCLog(@"successMessage - %@",successMessage);
         [SVProgressHUD dismiss];
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"注册成功 !" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"注册成功 !" message:nil delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
         [alertView show];
         
     } andFailureBlocks:^(NSString *failureMessage) {

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>4188F4DF-4D1E-4638-9075-93608459562C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>陶瓷</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A22A16C6DA55E08C3BABF197AEC6BAB1DC909B28</key>
 		<string>https://github.com/GuoWangTeam/TaoCiProject.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>陶瓷.xcodeproj</string>
+	<string>陶瓷.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A22A16C6DA55E08C3BABF197AEC6BAB1DC909B28</key>

@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol HomeHeadTableViewCellDelegate <NSObject>
+
+- (void)didCategoryButton:(id)dic;
+
+@end
+
 @interface HomeHeadTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id<HomeHeadTableViewCellDelegate>delegate;
+
+- (void)setArray:(NSArray *)arr;
 
 @end

@@ -24,6 +24,8 @@
     [self.window makeKeyAndVisible];
     self.window.rootViewController = [[STTableBarController alloc] init];
     
+    [[NSUserDefaults standardUserDefaults ] setValue:@"NO" forKey:LOGIN_STATE];
+    
     return YES;
 }
 

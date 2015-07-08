@@ -11,6 +11,9 @@
 
 @interface RegisterWithPhoneNoController ()
 
+@property (nonatomic, weak) IBOutlet UITextField *textField;
+@property (nonatomic, strong) NSString *verifycode;
+
 @end
 
 @implementation RegisterWithPhoneNoController
@@ -25,8 +28,19 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)nestStep {
-    RegisterController *rVC = [[RegisterController alloc] init];
-    [self.navigationController pushViewController:rVC animated:YES];
+    [SVProgressHUD showWithStatus:@"正在注册 请稍候"];
+    [[TCNetworkTool sharedNetTool] verifyCodeWithCallNumber:_textField.text andSuccessBlocks:^(NSString *successMessage) {
+        [SVProgressHUD dismiss];
+        RegisterController *rVC = [[RegisterController alloc] init];
+        rVC.verify = successMessage;
+        [self.navigationController pushViewController:rVC animated:YES];
+    } andFailureBlocks:^(NSString *failureMessage) {
+        [SVProgressHUD dismiss];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"获取密码失败 !" message:failureMessage delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+        [alertView show];
+    }];
+    
+    
     
 }
 

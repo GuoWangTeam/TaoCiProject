@@ -42,6 +42,8 @@
     [self setupChildView];
     
     self.isFirst = YES;
+    
+    
 }
 
 - (void)setupChildView
@@ -159,8 +161,7 @@
     }
 }
 
-- (void)setIsFirst:(BOOL)isFirst
-{
+- (void)setIsFirst:(BOOL)isFirst {
     if (_isFirst == isFirst) {
         return;
     }
@@ -175,8 +176,7 @@
     }
 }
 
-- (UIButton *)adBtn
-{
+- (UIButton *)adBtn {
     if (_adBtn == nil) {
         _adBtn = [[UIButton alloc] init];
         _adBtn.frame = CGRectMake(7, 64 + 7, SCREEN_WIDTH * 0.67 - 14, 90 - 14);
@@ -187,8 +187,32 @@
     return _adBtn;
 }
 
-- (void)showAD
-{
+- (void)showAD {
     TCLog(@"摁扭被点击了");
+}
+
+- (void)testCategoryList {
+    [[TCNetworkTool sharedNetTool] categoryListWithSuccessBlocks:^(NSArray *resultArray) {
+        NSArray *array = resultArray;
+    } andFailureBlocks:^(NSString *failureMessage) {
+        [STAlertView st_promptAlertWithMessage:failureMessage];
+    }];
+    
+}
+
+- (void)testCategoryDetail {
+    [[TCNetworkTool sharedNetTool] categoryGetAllCompanyWithID:@"1" andSuccessBlocks:^(NSArray *resultArray) {
+        NSArray *array = resultArray;
+    } andFailureBlocks:^(NSString *failureMessage) {
+        
+    }];
+}
+
+- (void)testRentDetail {
+    [[TCNetworkTool sharedNetTool] rentDetailWithID:@"0" andSuccessBlocks:^(NSArray *resultArray) {
+        TCLog(@"%@",resultArray);
+    } andFailureBlocks:^(NSString *failureMessage) {
+        [STAlertView st_promptAlertWithMessage:failureMessage];
+    }];
 }
 @end

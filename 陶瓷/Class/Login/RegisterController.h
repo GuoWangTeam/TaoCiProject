@@ -10,4 +10,6 @@
 
 @interface RegisterController : UIViewController
 
+@property (nonatomic, strong) NSString *verify;
+
 @end

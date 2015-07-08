@@ -26,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x9676;&#x74f7;/Class/Main/Tool/TCNetworkTool.m"
-            timestampString = "456756907.601477"
+            timestampString = "458019154.805034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "-rentListWithPn:andSuccessBlocks:andFailureBlocks:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x9676;&#x74f7;/Class/Login/RegisterController.m"
-            timestampString = "456758424.214528"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "-submitToRegister"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "-rentDetailWithID:andSuccessBlocks:andFailureBlocks:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
